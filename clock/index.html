@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Login and Registration Page</title>
+  </head>
+  <body>
+    <h1>Simple Login and Registration Page</h1>
+
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="login-username">Username:</label>
+      <input type="text" id="login-username" name="username" required><br><br>
+      <label for="login-password">Password:</label>
+      <input type="password" id="login-password" name="password" required><br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+    <h2>Register</h2>
+    <form id="register-form">
+      <label for="register-username">Username:</label>
+      <input type="text" id="register-username" name="username" required><br><br>
+      <label for="register-password">Password:</label>
+      <input type="password" id="register-password" name="password" required><br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+    <script>
+      const loginForm = document.querySelector('#login-form');
+      loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const username = document.querySelector('#login-username').value;
+        const password = document.querySelector('#login-password').value;
+        if (localStorage.getItem(username) === password) {
+          alert('Login successful!');
+        } else {
+          alert('Invalid username or password');
+        }
+      });
+
+      const registerForm = document.querySelector('#register-form');
+      registerForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const username = document.querySelector('#register-username').value;
+        const password = document.querySelector('#register-password').value;
+        localStorage.setItem(username, password);
+        alert('Registration successful!');
+      });
+    </script>
+  </body>
+</html>

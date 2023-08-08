@@ -1,0 +1,83 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+body{
+	background: #22262AFF;
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 20px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #39B9C5B7; 
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #116FEDFF; 
+}
+
+.toBox{
+	width: 400px;
+	border-radius: 20px;
+	background: #fff;
+	box-shadow: 0 0 1px 3px #9999;
+}
+.createBox{
+	height: 60px;
+	border-radius: 20px;
+	box-shadow: 0 0 2px 3px #999;
+}
+.createI{
+	padding: 5px 15px;
+	outline: none;
+	border-radius: 20px;
+	color: #1BB1E3FF;
+	border:3px solid #1BB1E3FF;
+	width: 79%;
+	font-size: 22px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.resultBox{
+	height: 340px;
+	overflow-y: auto;
+	width: 400px;
+}
+.btnA{
+	border-radius: 20px;
+	padding: 5px 15px;
+	border: none;
+	font-size: 22px;
+	cursor: pointer;
+}
+.ritem{
+	margin: 10px 15px;
+	border-radius: 20px;
+	box-shadow: 0 0 3px 1px #999;
+	min-height: 20px;
+	padding: 15px 10px;
+}
+.both{
+	clear: both;
+}
+label{
+	cursor: pointer;
+}

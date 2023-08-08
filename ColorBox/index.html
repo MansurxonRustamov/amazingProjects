@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Color Box</title>
+	<style>
+		*{
+			padding: 0;margin: 0;box-sizing: border-box;
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		}
+		body{
+			
+		}
+		.cBox{
+			width: 100px;
+			height: 100px;
+			border:none;
+			filter: drop-shadow(0 0 10px #333);
+			border-radius: 10px;
+			background: #fff;
+			margin-top: 5%;
+			margin-bottom: 5%;
+			color: #fff;
+		}
+		input{
+			padding: 5px 20px;
+			outline: none;
+			border: 2px solid #FFF;
+			text-align: center;
+			filter:drop-shadow(0 0 5px #333);
+			font-size: 25px;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div class="container" align="center">
+			<div class="cBox" align="center"></div>
+		</div>
+		<form align="center">
+			<input type="text" placeholder="Write Color">
+		</form>
+	</div>
+
+	<script>
+		let input = document.querySelector("input")
+			cBox = document.querySelector(".cBox")
+		input.addEventListener("input",(e)=>{
+			cBox.style.background = input.value
+			input.style.color= input.value
+			input.style.borderColor= input.value
+
+		})
+
+
+	</script>
+</body>
+</html>

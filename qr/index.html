@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>QR code reader</title>
+	<style>
+		*{
+			padding: 0;margin: 0;box-sizing: border-box;
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		}
+		body{
+			
+		}
+		.cBox{
+			width: 150px;
+			height: 150px;
+			border:none;
+			filter: drop-shadow(0 0 10px #333);
+			border-radius: 10px;
+			background: #fff;
+			margin-top: 5%;
+			margin-bottom: 5%;
+			color: #fff;
+		}
+		input{
+			padding: 5px 20px;
+			outline: none;
+			border: 2px solid #FFF;
+			text-align: center;
+			filter:drop-shadow(0 0 5px #333);
+			font-size: 25px;
+			border-radius: 5px;
+		}
+		.qBtn{
+			padding: 5px 20px;
+			outline: none;
+			border: 2px solid #FFF;
+			text-align: center;
+			filter:drop-shadow(0 0 5px #333);
+			font-size: 25px;
+			border-radius: 5px;
+			cursor: pointer;
+
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div class="container" align="center">
+			<div class="cBox" align="center">
+				<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example"><br><br>
+			</div>
+		</div>
+		<form align="center">
+			<input type="text" placeholder="Write Link">
+			<button class="qBtn">Generate</button>
+		</form>
+	</div>
+
+	<script>
+		let input = document.querySelector("input")
+			cBox = document.querySelector(".cBox img")
+		document.querySelector(".qBtn").addEventListener("click",(e)=>{
+			e.preventDefault()
+			if(input.value !=""){
+				cBox.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${input.value}`
+			}else{
+				alert("iltimos Linkni Yopzing...")
+			}
+			
+
+		})
+
+
+	</script>
+</body>
+</html>

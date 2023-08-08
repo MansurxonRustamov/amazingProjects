@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Drag Box</title>
+	<style>
+		.sidebar{
+			border:1px solid #333;
+			max-width: 300px;
+			filter: drop-shadow(1px 10px 3px #333);
+		}
+		.sideB{
+			width: 100%;
+			background: grey;
+			filter: drop-shadow(0 0 2px #fff);
+			border: 1px solid #fff;
+			color: #fff;
+			height: 25px;
+			padding: 5px 10px;
+		}
+	</style>
+</head>
+<body>
+<center>
+	<div class="in">1.Tesla-Elon Mask</div>
+		<div class="sidebar" align="left">
+		<div class="sideB" draggable="true"></div>
+		<div class="sideB" draggable="true"></div>
+		<div class="sideB" draggable="true"></div>
+		<div class="sideB" draggable="true"></div>
+		<div class="sideB" draggable="true"></div>
+		<div class="sideB" draggable="true"></div>
+		<div class="sideB" draggable="true"></div>
+		<div class="sideB" draggable="true"></div>
+		<div class="sideB" draggable="true"></div>
+	</div>
+</center>
+
+	<script>
+		let sides = document.querySelectorAll(".sideB")
+
+		sides.forEach(function(sid, i) {
+			sid.addEventListener("dragover",(e)=>{
+				e.preventDefault()
+			})
+			sid.addEventListener("drop",(el)=>{
+				sid.appendChild(document.querySelector(".in"))
+			})
+		})
+
+	</script>
+</body>
+</html>
